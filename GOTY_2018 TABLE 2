@@ -1,0 +1,34 @@
+create database Teste_Dev_Tarde; /*criar um banco de dados*/
+go
+use Teste_Dev_Tarde /*seleciona o BD 'Teste_Dev_Tarde' para adicionar a table no BD selecionado'*/
+go
+create table GOTY_2018(
+COD int IDENTITY(1,1) Primary Key,
+NOME varchar (40),
+PRICE varchar (10),
+DATA_LANÇAMENTO char (8),
+DEVELOPER varchar (40),
+PUBLISHER varchar (40),
+CLASSIFICACAO_INDICATIVA char (2)
+);
+
+/*Adiciona Informações em cada linha*/
+insert into GOTY_2018(NOME, PRECO, DATA_LANÇAMENTO, DEVELOPER, PUBLISHER, CLASSIFICACAO_INDICATIVA)
+values ('Red_Dead_Redemption_2','R$299,90', '26_10_2018', 'Rockstar_Games', 'Rockstar_Games', '18');
+
+insert into GOTY_2018(NOME, PRECO, DATA_LANÇAMENTO, DEVELOPER, PUBLISHER, CLASSIFICACAO_INDICATIVA)
+values ('Assasins Creed Odyssey','R$299,90', '05_10_2018', 'Ubisoft_Quebec', 'Ubisoft', '18');
+
+insert into GOTY_2018(NOME, PRECO, DATA_LANÇAMENTO, DEVELOPER, PUBLISHER, CLASSIFICACAO_INDICATIVA)
+values ('God Of War','R$299,90', '26_10_2018', 'Rockstar_Games', 'Rockstar_Games', '18');
+
+insert into GOTY_2018(NOME, PRECO, DATA_LANÇAMENTO, DEVELOPER, PUBLISHER, CLASSIFICACAO_INDICATIVA)
+values ('Celeste','R$59,99', '25_01_2018', 'Maddy_Makes_Games_Inc', 'Maddy_Makes_Games_Inc', 'Livre');
+
+insert into GOTY_2018(NOME, PRECO, DATA_LANÇAMENTO, DEVELOPER, PUBLISHER, CLASSIFICACAO_INDICATIVA)
+values ('Marvels Spider Man','R$299,90', '26_10_2018', 'Rockstar_Games', 'Rockstar_Games', '18');
+
+insert into GOTY_2018(NOME, PRECO, DATA_LANÇAMENTO, DEVELOPER, PUBLISHER, CLASSIFICACAO_INDICATIVA)
+values ('Monster Hunter: World','R$299,90', '26_10_2018', 'Rockstar_Games', 'Rockstar_Games', '18');
+
+
