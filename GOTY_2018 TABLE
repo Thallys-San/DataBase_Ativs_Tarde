@@ -1,34 +1,34 @@
-create database Teste_Dev_Tarde; /*criar um banco de dados*/
+create database Teste_Dev_Tarde; -- Cria um banco de dados
 go
-use Teste_Dev_Tarde /*seleciona o BD 'Teste_Dev_Tarde' para adicionar a table no BD selecionado'*/
+
+use Teste_Dev_Tarde; -- Seleciona o banco de dados 'Teste_Dev_Tarde'
 go
+
 create table GOTY_2018(
-COD int IDENTITY(1,1) Primary Key,
-NOME varchar (40),
-PRICE varchar (10),
-DATA_LANÇAMENTO char (8),
-DEVELOPER varchar (40),
-PUBLISHER varchar (40),
-CLASSIFICACAO_INDICATIVA char (2)
+    COD int IDENTITY(1,1) Primary Key,  -- Chave primária com auto incremento
+    NOME varchar(40),
+    PRECO varchar(10),
+    DATA_LANÇAMENTO DATE, -- Alterado para o tipo DATE
+    DEVELOPER varchar(40),
+    PUBLISHER varchar(40),
+    CLASSIFICACAO_INDICATIVA char(6)
 );
 
-/*Adiciona Informações em cada linha*/
+-- Adiciona Informações em cada linha
 insert into GOTY_2018(NOME, PRECO, DATA_LANÇAMENTO, DEVELOPER, PUBLISHER, CLASSIFICACAO_INDICATIVA)
-values ('Red_Dead_Redemption_2','R$299,90', '26_10_2018', 'Rockstar_Games', 'Rockstar_Games', '18');
-
-insert into GOTY_2018(NOME, PRECO, DATA_LANÇAMENTO, DEVELOPER, PUBLISHER, CLASSIFICACAO_INDICATIVA)
-values ('Assasins_Creed_Odyssey','R$179,99', '05_10_2018', 'Ubisoft_Quebec', 'Ubisoft', '18');
+values ('Red_Dead_Redemption_2','R$299,90', '2018-10-26', 'Rockstar_Games', 'Rockstar_Games', '18');
 
 insert into GOTY_2018(NOME, PRECO, DATA_LANÇAMENTO, DEVELOPER, PUBLISHER, CLASSIFICACAO_INDICATIVA)
-values ('God_Of_War','R$199,90', '09_11_2018', 'Santa_Monica_Studio', 'Playstation_Publishing', '18');
+values ('Assasins_Creed_Odyssey','R$179,99', '2018-10-05', 'Ubisoft_Quebec', 'Ubisoft', '18');
 
 insert into GOTY_2018(NOME, PRECO, DATA_LANÇAMENTO, DEVELOPER, PUBLISHER, CLASSIFICACAO_INDICATIVA)
-values ('Celeste','R$59,99', '25_01_2018', 'Maddy_Makes_Games_Inc', 'Maddy_Makes_Games_Inc', 'Livre');
+values ('God_Of_War','R$199,90', '2018-11-09', 'Santa_Monica_Studio', 'Playstation_Publishing', '18');
 
 insert into GOTY_2018(NOME, PRECO, DATA_LANÇAMENTO, DEVELOPER, PUBLISHER, CLASSIFICACAO_INDICATIVA)
-values ('Marvels_Spider_Man','R$249,90', '07_10_2018', 'Insomniac_Games', 'Playstation_Publishing', '12');
+values ('Celeste','R$59,99', '2018-01-25', 'Maddy_Makes_Games_Inc', 'Maddy_Makes_Games_Inc', 'livre');
 
 insert into GOTY_2018(NOME, PRECO, DATA_LANÇAMENTO, DEVELOPER, PUBLISHER, CLASSIFICACAO_INDICATIVA)
-values ('Monster_Hunter:World','R$99,00', '26_10_2018', 'CAPCOM_Co', 'CAPCOM_Co', '12');
+values ('Marvels_Spider_Man','R$249,90', '2018-10-07', 'Insomniac_Games', 'Playstation_Publishing', '12');
 
-
+insert into GOTY_2018(NOME, PRECO, DATA_LANÇAMENTO, DEVELOPER, PUBLISHER, CLASSIFICACAO_INDICATIVA)
+values ('Monster_Hunter:World','R$99,00', '2018-10-26', 'CAPCOM_Co', 'CAPCOM_Co', '12');
