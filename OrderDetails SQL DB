@@ -1,5 +1,6 @@
+create database Criacao_DB_Tarde;
 go
-use Teste_Dev_Tarde; -- Seleciona o banco de dados 'Teste_Dev_Tarde'
+use Criacao_DB_Tarde; -- Seleciona o banco de dados 'Teste_Dev_Tarde'
 go
 create table OrderDetails(
 	OrderDetailID Int,
