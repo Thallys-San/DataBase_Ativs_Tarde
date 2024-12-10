@@ -1,0 +1,6 @@
+use Biblioteca_Tarde
+go
+create table Contatos(
+Telefone int Unique,
+Gmail varchar(50) not null Primary Key  
+);
