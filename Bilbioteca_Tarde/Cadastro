@@ -4,7 +4,7 @@ use Biblioteca_Tarde
 go
 create table Cadastro(
 ID_Cliente int Identity(1,1) not null Primary Key,
-Nome varchar not null,
+Nome varchar(100) not null,
 CPF Int not null unique,
 Gmail varchar(50) not null,
 Senha Char (16) not null,
