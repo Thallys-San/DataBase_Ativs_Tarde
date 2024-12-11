@@ -1,11 +1,13 @@
 go
 use Biblioteca_Tarde
 go
-create table Endereços(
+create table Enderecos(
+ID_Cliente int not null,
 CEP int not null,
 Rua varchar not null,
 Numero int not null,
 Bairro varchar not null,
 Cidade varchar not null,
-Estado varchar not null
+Estado varchar not null,
+Constraint FK_Cadastro1 Foreign Key(ID_Cliente) References Cadastro(ID_cliente)
 );
