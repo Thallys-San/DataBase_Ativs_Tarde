@@ -1,0 +1,14 @@
+use Biblioteca_Tarde
+go
+create table Pedido(
+ID_Pedido int not null identity(1,1) Primary Key,
+ID_Cliente int not null,
+ID_Encomenda float,
+ID_Aluguel float,
+ID_Computador float,
+Valor_Total float not null,
+constraint FK_Encomenda foreign key(ID_Encomenda) references Encomenda_Livro(ID_Encomenda),
+constraint FK_Aluguel foreign key(ID_Aluguel) references Aluguel(ID_Aluguel),
+constraint FK_Computador foreign key(ID_Computador) references Computador(ID_Computador),
+constraint FK_Cadastro_Encomenda_Aluguel_Computador foreign key(ID_Cliente) references Cadastro(ID_Cliente)
+);
