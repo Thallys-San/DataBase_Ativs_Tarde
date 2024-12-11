@@ -7,5 +7,5 @@ Nome_Livro varchar(50) not null,
 Edição varchar(50) not null,
 Sessão varchar(50) not null,
 Quantidade int not null,
-Valor float not null);
---cria a tabela
+Valor float not null
+);
