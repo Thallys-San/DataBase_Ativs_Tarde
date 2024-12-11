@@ -10,3 +10,13 @@ Gmail varchar(50) not null,
 Senha Char (16) not null,
 Data_Nascimento Date not null
 );
+
+use Biblioteca_Tarde;
+go
+--Insere na database
+create table Estoque_Livros(
+ID_Livro int not null identity(1,1) primary key,
+Nome varchar(50) not null,
+Edição varchar(50) not null,
+Sessão varchar(50) not null,
+Quantidade int not null);
