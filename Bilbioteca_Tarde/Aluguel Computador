@@ -4,5 +4,5 @@ create table Aluguel_Computador(
 ID_Cliente int not null,
 ID_computador int not null Primary key,
 Tempo_Utilizando datetime,
-Constraint FK_Cadastro2 Foreign Key (ID_Cliente) References Cadastro(ID_Clientes),
+Constraint FK_Cadastro2 Foreign Key (ID_Cliente) References Cadastro(ID_Cliente),
 );
