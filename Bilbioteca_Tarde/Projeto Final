@@ -16,7 +16,7 @@ go
 --Insere na database
 create table Estoque_Livros(
 ID_Livro int not null identity(1,1) primary key,
-Nome varchar(50) not null,
+Nome_Livro varchar(50) not null,
 Edição varchar(50) not null,
 Sessão varchar(50) not null,
 Quantidade int not null);
