@@ -1,7 +1,7 @@
 use Biblioteca_Tarde
 go
 create table Encomenda_Livro(
-ID_Pedido int not null identity(1,1),
+ID_Encomenda int identity(1,1) not null Primary key,
 ID_Livro int not null,
 ID_Cliente int not null,
 Quantidade int not null,
