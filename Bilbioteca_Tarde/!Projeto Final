@@ -72,7 +72,6 @@ Estado varchar(100) not null,
 Constraint FK_Cadastro1 Foreign Key(ID_Cliente) References Cadastro(ID_cliente)
 );
 
-
 use Biblioteca_Tarde
 go
 create table Pedido(
