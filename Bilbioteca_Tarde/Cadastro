@@ -6,6 +6,7 @@ create table Cadastro(
 ID_Cliente int Identity(1,1) not null Primary Key,
 Nome varchar not null,
 CPF Int not null unique,
-Senha Char (12) not null,
+Gmail varchar(50) not null,
+Senha Char (16) not null,
 Data_Nascimento Date not null
 );
