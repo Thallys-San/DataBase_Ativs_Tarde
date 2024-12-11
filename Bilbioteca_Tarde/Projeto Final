@@ -1,1 +1,12 @@
-
+create database Biblioteca_Tarde;
+go
+use Biblioteca_Tarde
+go
+create table Cadastro(
+ID_Cliente int Identity(1,1) not null Primary Key,
+Nome varchar not null,
+CPF Int not null unique,
+Gmail varchar(50) not null,
+Senha Char (16) not null,
+Data_Nascimento Date not null
+);
