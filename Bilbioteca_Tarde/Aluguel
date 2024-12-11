@@ -3,6 +3,7 @@ use Biblioteca_Tarde
 go
 -- TABELA
 create table Aluguel (
+ID_Aluguel int Identity(1,1) not null Primary key,
 ID_Cliente int not null,
 ID_Livro int not null,
 Data_Pedido date,
