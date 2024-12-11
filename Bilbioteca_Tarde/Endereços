@@ -1,0 +1,11 @@
+go
+use Biblioteca_Tarde
+go
+create table Endereços(
+CEP int not null,
+Rua varchar not null,
+Numero int not null,
+Bairro varchar not null,
+Cidade varchar not null,
+Estado varchar not null
+);
