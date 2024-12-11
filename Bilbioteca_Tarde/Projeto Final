@@ -2,7 +2,6 @@ create database Biblioteca_Tarde;
 go
 use Biblioteca_Tarde
 go
--- TABELA
 create table Cadastro(
 ID_Cliente int Identity(1,1) not null Primary Key,
 Nome varchar not null,
@@ -20,7 +19,8 @@ ID_Livro int not null identity(1,1) primary key,
 Nome_Livro varchar(50) not null,
 Edição varchar(50) not null,
 Sessão varchar(50) not null,
-Quantidade int not null);
+Quantidade int not null,
+Valor float not null);
 
 go
 use Biblioteca_Tarde
@@ -34,4 +34,16 @@ Data_Entrega date,
 Valor_Aluguel float,
 constraint FK_Cadastro Foreign Key (ID_Cliente) References Cadastro(ID_Cliente),
 constraint FK_EstoqueLivro Foreign Key (ID_Livro) References Estoque_Livros(ID_Livro)
+);
+
+go
+use Biblioteca_Tarde
+go
+create table Endereços(
+CEP int not null,
+Rua varchar not null,
+Numero int not null,
+Bairro varchar not null,
+Cidade varchar not null,
+Estado varchar not null
 );
