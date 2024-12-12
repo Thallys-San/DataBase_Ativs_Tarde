@@ -1,7 +1,7 @@
 use Oficina_Tarde
 go
 create table servico(
-ID_Servico int not null identity(1,1),
+ID_Servico int not null identity(1,1) primary key,
 ID_Demanda int,
 servico_realizado bit not null,
 valor float,
