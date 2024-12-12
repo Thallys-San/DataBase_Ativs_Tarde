@@ -1,1 +1,72 @@
+create database Oficina_Tarde;
+go
+use Oficina_Tarde
+go
+create table Cadastro(
+ID_Cliente int identity(1,1) not null primary key,
+Nome varchar(50) not null,
+CPF int not null unique,
+Senha varchar(50) not null,
+Data_Nascimento date not null,
+Gmail varchar(100) not null
+);
 
+use Oficina_Tarde
+go
+create table Cadastro_Automovel(
+ID_Cliente int,
+ID_Automovel int not null identity(1,1) Primary Key,
+Marca varchar(50),
+Modelo varchar(100),
+constraint FK_Cliente foreign key(ID_Cliente) references Cadastro(ID_Cliente)
+);
+
+go
+use Oficina_Tarde
+go
+create table Demanda (
+ID_Demanda int Not null Identity(1,1) primary key,
+ID_Automovel int not null,
+ID_Cliente int not null,
+Problema varchar(500),
+Constraint FK_Cadastro FOREIGN KEY (ID_Cliente) REFERENCES Cadastro(ID_Cliente)
+Constraint FK_Automovel FOREIGN KEY (ID_Automovel) REFERENCES Cadastro_Automovel(ID_Automovel)
+);
+
+use Oficina_Tarde
+go
+create table Encomenda_Peças (
+ID_Peça int not null,
+ID_Demanda int not null,
+CONSTRAINT FK_Peças FOREIGN KEY (ID_Peça)REFERENCES Estoque(ID_peça),
+CONSTRAINT FK_Demanda FOREIGN KEY (ID_Demanda)REFERENCES Demanda(ID_Demanda)
+);
+
+go
+use Oficina_Tarde
+go
+create table Estoque (
+ID_Peça int not null Identity(1,1) Primary key,
+Nome varchar(100) not null,
+Marca varchar(50) not null,
+Modelo varchar(50) not null,
+Quantidade int not null
+);
+
+use Oficina_Tarde
+go
+create table servico(
+ID_Servico int not null identity(1,1) primary key,
+ID_Demanda int,
+servico_realizado bit not null,
+valor float,
+constraint FK_Demanda1 foreign key(ID_Demanda) references Demanda(ID_Demanda)
+);
+
+use Oficina_Tarde;
+go
+create table Pagamento(
+ID_Servico int,
+Valor_Total float,
+constraint FK_Servico foreign key(ID_Servico) references servico(ID_Servico)
+);
