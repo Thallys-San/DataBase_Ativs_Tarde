@@ -1,0 +1,9 @@
+go
+use Oficina_Tarde
+go
+create table Demanda (
+ID_Demanda int Not null Identity(1,1) primary key,
+ID_Cliente int not null,
+Problema varchar(500),
+Constraint FK_Cadastro FOREIGN KEY REFERENCES Cadastro(ID_Cliente)
+);
