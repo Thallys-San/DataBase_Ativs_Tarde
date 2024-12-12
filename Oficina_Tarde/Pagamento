@@ -1,0 +1,7 @@
+use Oficina_Tarde;
+go
+create table Pagamento(
+ID_Servico int,
+Valor_Total float,
+constraint FK_Servico foreign key(ID_Servico) references servico(ID_Servico)
+);
