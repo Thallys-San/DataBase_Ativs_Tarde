@@ -29,17 +29,8 @@ ID_Demanda int Not null Identity(1,1) primary key,
 ID_Automovel int not null,
 ID_Cliente int not null,
 Problema varchar(500),
-Constraint FK_Cadastro FOREIGN KEY (ID_Cliente) REFERENCES Cadastro(ID_Cliente)
+Constraint FK_Cadastro FOREIGN KEY (ID_Cliente) REFERENCES Cadastro(ID_Cliente),
 Constraint FK_Automovel FOREIGN KEY (ID_Automovel) REFERENCES Cadastro_Automovel(ID_Automovel)
-);
-
-use Oficina_Tarde
-go
-create table Encomenda_Peças (
-ID_Peça int not null,
-ID_Demanda int not null,
-CONSTRAINT FK_Peças FOREIGN KEY (ID_Peça)REFERENCES Estoque(ID_peça),
-CONSTRAINT FK_Demanda FOREIGN KEY (ID_Demanda)REFERENCES Demanda(ID_Demanda)
 );
 
 go
@@ -51,6 +42,15 @@ Nome varchar(100) not null,
 Marca varchar(50) not null,
 Modelo varchar(50) not null,
 Quantidade int not null
+);
+
+use Oficina_Tarde
+go
+create table Encomenda_Peças (
+ID_Peça int not null,
+ID_Demanda int not null,
+CONSTRAINT FK_Peças FOREIGN KEY (ID_Peça)REFERENCES Estoque(ID_peça),
+CONSTRAINT FK_Demanda FOREIGN KEY (ID_Demanda)REFERENCES Demanda(ID_Demanda)
 );
 
 use Oficina_Tarde
