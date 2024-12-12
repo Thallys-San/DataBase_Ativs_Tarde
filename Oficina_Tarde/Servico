@@ -5,5 +5,5 @@ ID_Servico int not null identity(1,1),
 ID_Demanda int,
 servico_realizado bit not null,
 valor float,
-constraint FK_Demanda foreign key(ID_Demanda) references Demanda(ID_Demanda)
+constraint FK_Demanda1 foreign key(ID_Demanda) references Demanda(ID_Demanda)
 );
