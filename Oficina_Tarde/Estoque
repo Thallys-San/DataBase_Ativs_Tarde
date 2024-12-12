@@ -4,5 +4,7 @@ go
 create table Estoque (
 ID_Peça int not null Identity(1,1) Primary key,
 Nome varchar(100) not null,
+Marca varchar(50) not null,
+Modelo varchar(50) not null,
 Quantidade int not null
 );
