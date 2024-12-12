@@ -1,0 +1,8 @@
+use Musica_Tarde
+go
+create table Artista(
+ID_Artista int not null identity(1,1) primary key,
+Nome Varchar(100),
+Nascimento date not null,
+Pais_Natal Varchar(50) not null
+);
