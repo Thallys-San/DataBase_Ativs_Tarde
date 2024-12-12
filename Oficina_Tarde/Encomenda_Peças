@@ -1,0 +1,8 @@
+use Oficina_Tarde
+go
+create table Encomenda_Peças (
+ID_Peça int not null,
+ID_Demanda int not null,
+CONSTRAINT FK_Peças FOREIGN KEY (ID_Peça)REFERENCES Estoque(ID_peça),
+CONSTRAINT FK_Demanda FOREIGN KEY (ID_Demanda)REFERENCES Demanda(ID_Demanda)
+);
