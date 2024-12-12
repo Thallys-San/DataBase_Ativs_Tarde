@@ -1,7 +1,7 @@
 create database Musica_Tarde;
 go
 create table Cadastro_Musica(
-ID_Musica int not null identity(1,1),
+ID_Musica int not null identity(1,1) primary key,
 Nome_Musica varchar(200) not null,
 Lancamento date not null,
 Duracao_Musica float not null
