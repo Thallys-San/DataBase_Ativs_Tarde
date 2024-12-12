@@ -18,12 +18,14 @@ ID_Artista int not null,
 Nome_Musica varchar(200) not null,
 Lancamento date not null,
 Duracao_Musica float not null,
-CONSTRAINT FK_AStista FOREIGN KEY (ID_Artista)REFERENCES Artista(ID_Artista)                  
+CONSTRAINT FK_Artista FOREIGN KEY (ID_Artista)REFERENCES Artista(ID_Artista)                  
 );
 
 go
 use Musica_Tarde
 go
 create table Cadastro_Album(
-
+ID_Album int not null identity(1,1) primary key,
+ID_Musica int not null,
+CONSTRAINT FK_Album_Musica FOREIGN KEY (ID_Musica)REFERENCES Cadastro_Musica(ID_Musica)
 );
