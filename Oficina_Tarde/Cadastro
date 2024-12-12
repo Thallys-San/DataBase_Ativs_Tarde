@@ -1,1 +1,9 @@
-
+create database Oficina_Tarde;
+go
+create table Cadastro(
+Nome varchar(50) not null,
+CPF int not null Primary key,
+Senha varchar(50) not null,
+Data_Nascimento date not null,
+Gmail varchar(100) not null
+);
