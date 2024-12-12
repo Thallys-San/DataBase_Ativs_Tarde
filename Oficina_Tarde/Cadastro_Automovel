@@ -1,0 +1,9 @@
+use Oficina_Tarde
+go
+create table Cadastro_Automovel(
+ID_Cliente int,
+ID_Automovel int not null identity(1,1) Primary Key,
+Marca varchar(50),
+Modelo varchar(100),
+constraint FK_Cliente foreign key(ID_Cliente) references Cadastro(ID_Cliente)
+);
