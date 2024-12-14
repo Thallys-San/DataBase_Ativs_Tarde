@@ -1,0 +1,12 @@
+create table TimeLine(
+ID_Post int identity(1,1) Primary key,
+ID_Usuario int not null,
+TextPosts text not null,
+imageURL text not null,
+Criado_Data_Hora datetime not null,
+Atualizado_Data_Hora datetime,
+Contagem_Likes int,
+Contagem_Comentarios int,
+publico bit not null,
+CONSTRAINT FK_Cadastro FOREIGN KEY (ID_Usuario)REFERENCES Cadastro(ID_Usuario)
+);
