@@ -5,8 +5,8 @@ TextPosts text not null,
 imagemURL text not null,
 Criado_Data_Hora datetime not null,
 Atualizado_Data_Hora datetime,
-Contagem_Likes int,
-Contagem_Comentarios int,
+Contador_Likes int,
+Contador_Comentarios int,
 publico bit not null,
 CONSTRAINT FK_Cadastro FOREIGN KEY (ID_Usuario)REFERENCES Cadastro(ID_Usuario)
 );
