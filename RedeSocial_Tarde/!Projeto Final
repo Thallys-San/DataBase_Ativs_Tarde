@@ -1,1 +1,72 @@
+create DataBase RedeSocial_Tarde;
 
+go
+use RedeSocial_Tarde
+go
+create table Genero(
+ID_Genero int not null identity(1,1) primary key,
+Genero varchar(50)
+);
+
+go
+use RedeSocial_Tarde
+go
+create table Cadastro(
+ID_Usuario int not null Identity(1,1) primary key,
+nome varchar(100),
+NickName varchar(80),
+Email varchar(80),
+telefone int unique,
+nascimento date,
+website varchar(200),
+ID_Genero int,
+constraint FK_Genero foreign key(ID_Genero) references Genero(ID_Genero)
+);
+
+go
+use RedeSocial_Tarde
+go
+create table TimeLine(
+ID_Post int identity(1,1) Primary key,
+ID_Usuario int not null,
+TextPosts text not null,
+imagemURL text not null,
+Criado_Data_Hora datetime not null default getdate(),
+Atualizado_Data_Hora datetime default getdate(),
+Contador_Likes int,
+Contador_Comentarios int,
+publico bit not null,
+CONSTRAINT FK_Cadastro FOREIGN KEY (ID_Usuario)REFERENCES Cadastro(ID_Usuario)
+);
+
+go
+use RedeSocial_Tarde
+go
+create table Albuns(
+ID_Album int not null identity (1,1) Primary key,
+ID_Usuario int not null,
+Titulo text not null,
+Descricao text,
+Imagem_Capa text,
+ImagemURL text,
+Criado_Album_Data_Hora datetime not null default getdate(),
+Atualizado_Album_Data_Hora datetime null default getdate(),
+publico bit not null,
+Contador_Fotos int,
+CONSTRAINT FK_Cadastro1 FOREIGN KEY (ID_Usuario)REFERENCES Cadastro(ID_Usuario)
+);
+
+use RedeSocial_Tarde
+go
+create table TimeLine(
+ID_Post int identity(1,1) Primary key,
+ID_Usuario int not null,
+TextPosts text not null,
+imagemURL text not null,
+Criado_Data_Hora datetime not null default getdate(),
+Atualizado_Data_Hora datetime default getdate(),
+Contador_Likes int,
+Contador_Comentarios int,
+publico bit not null,
+CONSTRAINT FK_Cadastro FOREIGN KEY (ID_Usuario)REFERENCES Cadastro(ID_Usuario)
+);
