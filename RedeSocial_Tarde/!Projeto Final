@@ -56,17 +56,13 @@ Contador_Fotos int,
 CONSTRAINT FK_Cadastro1 FOREIGN KEY (ID_Usuario)REFERENCES Cadastro(ID_Usuario)
 );
 
+go
 use RedeSocial_Tarde
 go
-create table TimeLine(
-ID_Post int identity(1,1) Primary key,
-ID_Usuario int not null,
-TextPosts text not null,
-imagemURL text not null,
-Criado_Data_Hora datetime not null default getdate(),
-Atualizado_Data_Hora datetime default getdate(),
-Contador_Likes int,
-Contador_Comentarios int,
-publico bit not null,
-CONSTRAINT FK_Cadastro FOREIGN KEY (ID_Usuario)REFERENCES Cadastro(ID_Usuario)
+CREATE TABLE Seguidores (
+    Seguidor_ID INT NOT NULL,
+    Seguindo_ID INT NOT NULL,
+    PRIMARY KEY (Seguidor_ID, Seguindo_ID),
+    CONSTRAINT FK_Seguidor FOREIGN KEY (Seguidor_ID) REFERENCES Cadastro(ID_Usuario) ON DELETE CASCADE,
+    CONSTRAINT FK_Seguindo FOREIGN KEY (Seguindo_ID) REFERENCES Cadastro(ID_Usuario) ON DELETE NO ACTION
 );
