@@ -1,3 +1,5 @@
+use RedeSocial_Tarde
+go
 create table TimeLine(
 ID_Post int identity(1,1) Primary key,
 ID_Usuario int not null,
