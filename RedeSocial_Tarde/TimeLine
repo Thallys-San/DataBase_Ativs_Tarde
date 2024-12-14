@@ -2,7 +2,7 @@ create table TimeLine(
 ID_Post int identity(1,1) Primary key,
 ID_Usuario int not null,
 TextPosts text not null,
-imageURL text not null,
+imagemURL text not null,
 Criado_Data_Hora datetime not null,
 Atualizado_Data_Hora datetime,
 Contagem_Likes int,
