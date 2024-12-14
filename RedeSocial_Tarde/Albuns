@@ -1,0 +1,16 @@
+go
+use RedeSocial_Tarde
+go
+create table Albuns(
+ID_Album int not null identity (1,1) Primary key,
+ID_Usuario int not null,
+Titulo text not null,
+Descricao text,
+Imagem_Capa text,
+ImagemURL text,
+Criado_Album_Data_Hora datetime not null default getdate(),
+Atualizado_Album_Data_Hora datetime null default getdate(),
+publico bit not null,
+Contador_Fotos int,
+CONSTRAINT FK_Cadastro1 FOREIGN KEY (ID_Usuario)REFERENCES Cadastro(ID_Usuario)
+);
