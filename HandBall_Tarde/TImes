@@ -1,0 +1,11 @@
+go
+use Handball_Tarde
+go
+create table Times(
+ID_jogadores int not null,
+ID_Time int not null identity(1,1) Primary Key,
+Capitão int not null,
+Nome_Time text not null,
+CONSTRAINT FK_Jogadores FOREIGN KEY (ID_jogadores)REFERENCES Jogadores(ID_Jogador),
+CONSTRAINT FK_Capitão_Jogadores FOREIGN KEY (Capitão)REFERENCES Jogadores(ID_Jogador)
+);
