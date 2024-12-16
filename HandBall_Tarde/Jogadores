@@ -1,1 +1,13 @@
-
+create DataBase Handball_Tarde;
+go
+use Handball_Tarde
+go
+create table Jogadores(
+ID_Jogador int not null identity(1,1) Primary Key,
+Nome varchar(100),
+Nascimento date,
+Genero char(1) check(Genero in ('M','F')) not null,
+Altura decimal(3,2) not null,
+Cargo char(1) check(Cargo in ('C','N')) not null
+--C para Capitão e N para Normal
+);
