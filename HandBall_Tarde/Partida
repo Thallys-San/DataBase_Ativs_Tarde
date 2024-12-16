@@ -1,0 +1,10 @@
+use Handball_Tarde
+go
+create table Partida(
+ID_Partida Int not null Identity(1,1) primary key,
+Time_Mandante int not null,
+Time_Visitante int not null,
+Estadio_Mandante Varchar(100) not null,
+CONSTRAINT FK_Time_Mandante FOREIGN KEY (Time_Mandante)REFERENCES Times(ID_Time),
+CONSTRAINT FK_Time_Visitante FOREIGN KEY (Time_Visitante)REFERENCES Times(ID_Time)
+);
