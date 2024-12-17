@@ -1,0 +1,10 @@
+use Handball_Tarde
+go
+create table Classificacao (
+	Id_Classificacao int identity(1,1) Primary Key,	
+    ID_Time int not null,
+    saldo_Vitorias int,
+    saldo_Gols int,
+    classificacao as (saldo_Vitorias + saldo_Gols),
+	CONSTRAINT FK_Times_Classificacao FOREIGN KEY (ID_Time)REFERENCES Times(ID_Time)
+);
