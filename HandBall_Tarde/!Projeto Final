@@ -1,1 +1,45 @@
+create DataBase Handball_Tarde;
+go
+use Handball_Tarde
+go
+create table Jogadores(
+ID_Jogador int not null identity(1,1) Primary Key,
+Nome varchar(100),
+Nascimento date,
+Genero char(1) check(Genero in ('M','F')) not null,
+Altura decimal(3,2) not null
+);
 
+go
+use Handball_Tarde
+go
+create table Times(
+ID_jogadores int not null,
+ID_Time int not null identity(1,1) Primary Key,
+Capitão int not null,
+Nome_Time text not null,
+CONSTRAINT FK_Jogadores FOREIGN KEY (ID_jogadores)REFERENCES Jogadores(ID_Jogador),
+CONSTRAINT FK_Capitão_Jogadores FOREIGN KEY (Capitão)REFERENCES Jogadores(ID_Jogador)
+);
+
+use Handball_Tarde
+go
+create table Partida(
+ID_Partida Int not null Identity(1,1) primary key,
+Time_Mandante int not null,
+Time_Visitante int not null,
+Estadio_Mandante Varchar(100) not null,
+CONSTRAINT FK_Time_Mandante FOREIGN KEY (Time_Mandante)REFERENCES Times(ID_Time),
+CONSTRAINT FK_Time_Visitante FOREIGN KEY (Time_Visitante)REFERENCES Times(ID_Time)
+);
+
+use Handball_Tarde
+go
+create table Classificacao (
+	Id_Classificacao int identity(1,1) Primary Key,	
+    ID_Time int not null,
+    saldo_Vitorias int,
+    saldo_Gols int,
+    classificacao as (saldo_Vitorias + saldo_Gols),
+	CONSTRAINT FK_Times_Classificacao FOREIGN KEY (ID_Time)REFERENCES Times(ID_Time)
+);
